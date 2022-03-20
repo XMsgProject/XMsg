@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+
+project("imgui")
+
+FILE(GLOB ImGuiSrc *.cpp)
+FILE(GLOB ImGuiHeaders *.h)
+
+file(GLOB ImGuiSrcBackEnds backends\*.cpp)
+file(GLOB ImGuiHeadersBackEnds backends\*.h)
+
+add_library(imgui STATIC ${ImGuiSrc} ${ImGuiHeaders} ${ImGuiSrcBackEnds} ${ImGuiHeadersBackEnds})

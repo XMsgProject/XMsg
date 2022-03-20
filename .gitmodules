@@ -1,0 +1,12 @@
+[submodule "ThirdParty/openal"]
+	path = ThirdParty/openal
+	url = https://github.com/kcat/openal-soft.git
+[submodule "XPlatform/core"]
+	path = XPlatform/core
+	url = https://github.com/XPlatformProject/XPlatform.git
+[submodule "XPlatform/Exts/net"]
+	path = XPlatform/Exts/net
+	url = https://github.com/XPlatformProject/XPlatform.net.git
+[submodule "NativeClient/ThirdParty/glfw"]
+	path = NativeClient/ThirdParty/glfw
+	url = https://github.com/glfw/glfw.git
