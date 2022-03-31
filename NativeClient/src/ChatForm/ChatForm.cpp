@@ -28,8 +28,7 @@ void XMsg::GUI::ChatForm::UpdateFriendList(){
 	m_vFriendList = RequestRes.second;
 
 	auto FriendIdsRes = XMsg::Net::RequestFriendIDs();
-
-	std::cout << FriendIdsRes.first << std::endl;
+	
 	m_vFriendIDs = FriendIdsRes.second;
 
 	XMsg::Net::SetMessageCallback(m_MsgCallback);
@@ -173,7 +172,9 @@ void XMsg::GUI::ChatForm::FriendChatWindow::Draw(){
 	if (IsOpen) {
 		ImGui::Begin(FriendName.c_str(), &IsOpen);
 
-		for (Message& m_Msg : Msges) {
+		for (size_t i = Msges.size() - 5; i > Msges.size(); i++) {
+			Message& m_Msg = Msges[i];
+			
 			if (m_Msg.IsYour) {
 				ImGui::Text(m_ChatFromParent->UserNickName.c_str());
 				ImGui::Text(m_Msg.Text.c_str());

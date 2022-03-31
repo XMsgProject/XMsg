@@ -4,3 +4,4 @@ project("XPlatform")
 
 add_subdirectory("core")
 add_subdirectory("Exts/net")
+add_subdirectory(XFMT)
