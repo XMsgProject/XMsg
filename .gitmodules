@@ -10,3 +10,6 @@
 [submodule "NativeClient/ThirdParty/glfw"]
 	path = NativeClient/ThirdParty/glfw
 	url = https://github.com/glfw/glfw.git
+[submodule "XPlatform/XFMT"]
+	path = XPlatform/XFMT
+	url = https://github.com/XPlatformProject/XFmt.git

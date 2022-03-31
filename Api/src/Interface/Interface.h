@@ -5,6 +5,7 @@
 #include <XPlatform.core/api.h>
 
 #include <XPlatform.net/Net.h>
+#include <XPlatform.net/XP_ISocket.h>
 #include <XPlatform.net/SSL/SSL.h>
 #include <vector>
 #include <utility>

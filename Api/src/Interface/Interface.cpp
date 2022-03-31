@@ -1,7 +1,7 @@
+#include <XPlatform.net/XP_ISocket.h>
 #include "Interface.h"
 
 #include "..//XMsg.h"
-#include <XPlatform.net/XP_ISocket.h>
 
 #include <iostream>
 

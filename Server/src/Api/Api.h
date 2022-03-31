@@ -4,8 +4,8 @@
 #include <XPlatform.core/api.h>
 #include<XPlatform.core/engine.h>
 
-#include<XPlatform.net/SSL/SSL.h>
 #include <XPlatform.net/XP_ISocket.h>
+#include<XPlatform.net/SSL/SSL.h>
 
 #include <thread>
 
