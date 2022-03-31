@@ -40,6 +40,9 @@ namespace XMsg {
 
 				void LoadMessages();
 
+				int m_nNumShowMessage = 5;
+				bool m_bMessagesRestriction = false;
+
 				std::array<char, 256> m_aMessageBuffer;
 
 			public:

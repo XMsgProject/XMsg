@@ -168,11 +168,19 @@ void XMsg::GUI::ChatForm::FriendChatWindow::Open(){
 	IsOpen = true;
 }
 
+size_t GetSizeDiff(size_t size, int diff) {
+	size_t m_nDebugVar = size < diff ? 0 : size - diff;
+
+	return m_nDebugVar;
+}
+
 void XMsg::GUI::ChatForm::FriendChatWindow::Draw(){
 	if (IsOpen) {
 		ImGui::Begin(FriendName.c_str(), &IsOpen);
 
-		for (size_t i = Msges.size() - 5; i > Msges.size(); i++) {
+		size_t m_nMessagesSize = Msges.size();
+
+		for (size_t i = GetSizeDiff(m_nMessagesSize, !m_bMessagesRestriction ? m_nNumShowMessage : m_nMessagesSize); i < m_nMessagesSize; i++) {
 			Message& m_Msg = Msges[i];
 			
 			if (m_Msg.IsYour) {
@@ -199,6 +207,14 @@ void XMsg::GUI::ChatForm::FriendChatWindow::Draw(){
 			if (m_aMessageBuffer.empty());
 			this->SendMessage(m_aMessageBuffer.data());
 			m_aMessageBuffer.fill(0);
+		}
+
+		ImGui::Separator();
+
+		ImGui::Checkbox("disable message restriction", &m_bMessagesRestriction);
+
+		if (!m_bMessagesRestriction) {
+			ImGui::DragInt("number of showing messages", &m_nNumShowMessage, 0.5f, 4, 10000);
 		}
 
 		ImGui::End();

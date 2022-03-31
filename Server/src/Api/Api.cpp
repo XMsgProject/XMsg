@@ -65,6 +65,7 @@ void XMsg::Server::Api::ClientHandler(std::ptrdiff_t m_nUserId){
 				m_pxiClient->Close();
 				m_vFreeSockets.push_back(m_nUserId);
 				m_nCurrentUsersCount--;
+				return;
 			}
 		}
 	}
